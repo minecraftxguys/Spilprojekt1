@@ -31,6 +31,9 @@ public class ButtonPressManager : MonoBehaviour
     //0 = The state where age can be defined
     public int Age = 0;
 
+    //Boolean testing
+    public bool CanAnswer = true;
+
     //Point System
     public float Point = 0;
     public float NotAPoint = 0;
@@ -41,18 +44,12 @@ public class ButtonPressManager : MonoBehaviour
     void Start()
     {
         QM = QuestionManager.GetComponent<QuestionManager>();
-<<<<<<< HEAD
         TM = GameManager.GetComponent<Timer>();
 	}
 	
-	// Update is called once per frame
-	void Update ()
-=======
-    }
 
     // Update is called once per frame
     void Update()
->>>>>>> 37a67c9d02d5c810f9d7230e4f1875e5104346a4
     {
         ScoreCounter.text = "Score: " + Point;
         #region AgeSelection
@@ -91,22 +88,25 @@ public class ButtonPressManager : MonoBehaviour
             //checks if user presses left button
             {
                 Debug.Log("User pressed the left button");
-                if (QM.currentLine == 0)
+                if (QM.currentLine == 0 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionAnswered();
                     LeftCorrectAnswerImage.SetActive(true);
                     StartCoroutine(LeftCorrectAnswer());
                 }
 
-                if (QM.currentLine == 1)
+                if (QM.currentLine == 1 && CanAnswer == true) // add boolean. Turn to true when u cant write or whatever.
                 {
+                    CanAnswer = false;
                     QM.QuestionAnswered();
                     LeftCorrectAnswerImage.SetActive(true);
                     StartCoroutine(LeftCorrectAnswer());
                 }
 
-                if (QM.currentLine == 2)
+                if (QM.currentLine == 2 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionFailed();
                     LeftWrongAnswerImage.SetActive(true);
                     StartCoroutine(LeftWrongAnswer());
@@ -139,22 +139,25 @@ public class ButtonPressManager : MonoBehaviour
             //checks if user presses middle button
             {
                 Debug.Log("User pressed the middle button");
-                if (QM.currentLine == 0)
+                if (QM.currentLine == 0 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionFailed();
                     MiddleWrongAnswerImage.SetActive(true);
                     StartCoroutine(MiddleWrongAnswer());
                 }
 
-                if (QM.currentLine == 1)
+                if (QM.currentLine == 1 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionFailed();
                     MiddleWrongAnswerImage.SetActive(true);
                     StartCoroutine(MiddleWrongAnswer());
                 }
 
-                if (QM.currentLine == 2)
+                if (QM.currentLine == 2 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionFailed();
                     MiddleWrongAnswerImage.SetActive(true);
                     StartCoroutine(MiddleWrongAnswer());
@@ -188,22 +191,25 @@ public class ButtonPressManager : MonoBehaviour
             //checks if user presses right button
             {
                 Debug.Log("User pressed the right button");
-                if (QM.currentLine == 0)
+                if (QM.currentLine == 0 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionFailed();
                     MiddleWrongAnswerImage.SetActive(true);
                     StartCoroutine(MiddleWrongAnswer());
                 }
 
-                if (QM.currentLine == 1)
+                if (QM.currentLine == 1 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionFailed();
                     RightCorrectAnswerImage.SetActive(true);
                     StartCoroutine(RightCorrectAnswer());
                 }
 
-                if (QM.currentLine == 2)
+                if (QM.currentLine == 2 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionAnswered();
                     RightCorrectAnswerImage.SetActive(true);
                     StartCoroutine(RightCorrectAnswer());
@@ -242,43 +248,49 @@ public class ButtonPressManager : MonoBehaviour
             //checks if user presses left button
             {
                 Debug.Log("User pressed the left button");
-                if (QM.currentLine == 0)
+                if (QM.currentLine == 0 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionAnswered();
                     LeftCorrectAnswerImage.SetActive(true);
                     StartCoroutine(LeftCorrectAnswer());
                 }
 
-                if (QM.currentLine == 1)
+                if (QM.currentLine == 1 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionFailed();
                     LeftWrongAnswerImage.SetActive(true);
                     StartCoroutine(LeftWrongAnswer());
                 }
 
-                if (QM.currentLine == 2)
+                if (QM.currentLine == 2 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionFailed();
                     LeftWrongAnswerImage.SetActive(true);
                     StartCoroutine(LeftWrongAnswer());
                 }
 
-                if (QM.currentLine == 3)
+                if (QM.currentLine == 3 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionFailed();
                     LeftWrongAnswerImage.SetActive(true);
                     StartCoroutine(LeftWrongAnswer());
                 }
 
-                if (QM.currentLine == 4)
+                if (QM.currentLine == 4 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionAnswered();
                     LeftCorrectAnswerImage.SetActive(true);
                     StartCoroutine(LeftCorrectAnswer());
                 }
 
-                if (QM.currentLine == 5)
+                if (QM.currentLine == 5 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionFailed();
                     LeftWrongAnswerImage.SetActive(true);
                     StartCoroutine(LeftWrongAnswer());
@@ -296,44 +308,50 @@ public class ButtonPressManager : MonoBehaviour
             //checks if user presses middle button
             {
                 Debug.Log("User pressed the middle button");
-                if (QM.currentLine == 0)
+                if (QM.currentLine == 0 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionFailed();
                     MiddleWrongAnswerImage.SetActive(true);
                     StartCoroutine(MiddleWrongAnswer());
                 }
 
-                if (QM.currentLine == 1)
+                if (QM.currentLine == 1 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionAnswered();
                     MiddleCorrectAnswerImage.SetActive(true);
                     StartCoroutine(MiddleCorrectAnswer());
                 }
 
-                if (QM.currentLine == 2)
+                if (QM.currentLine == 2 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionAnswered();
                     MiddleCorrectAnswerImage.SetActive(true);
                     StartCoroutine(MiddleCorrectAnswer());
                 }
 
-                if (QM.currentLine == 3)
+                if (QM.currentLine == 3 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionAnswered();
                     MiddleCorrectAnswerImage.SetActive(true);
                     StartCoroutine(MiddleCorrectAnswer());
 
                 }
 
-                if (QM.currentLine == 4)
+                if (QM.currentLine == 4 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionFailed();
                     MiddleWrongAnswerImage.SetActive(true);
                     StartCoroutine(MiddleWrongAnswer());
                 }
 
-                if (QM.currentLine == 5)
+                if (QM.currentLine == 5 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionFailed();
                     MiddleWrongAnswerImage.SetActive(true);
                     StartCoroutine(MiddleWrongAnswer());
@@ -351,43 +369,49 @@ public class ButtonPressManager : MonoBehaviour
             //checks if user presses right button
             {
                 Debug.Log("User pressed the right button");
-                if (QM.currentLine == 0)
+                if (QM.currentLine == 0 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionFailed();
                     RightWrongAnswerImage.SetActive(true);
                     StartCoroutine(RightWrongAnswer());
                 }
 
-                if (QM.currentLine == 1)
+                if (QM.currentLine == 1 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionFailed();
                     RightWrongAnswerImage.SetActive(true);
                     StartCoroutine(RightWrongAnswer());
                 }
 
-                if (QM.currentLine == 2)
+                if (QM.currentLine == 2 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionFailed();
                     RightWrongAnswerImage.SetActive(true);
                     StartCoroutine(RightWrongAnswer());
                 }
 
-                if (QM.currentLine == 3)
+                if (QM.currentLine == 3 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionFailed();
                     RightWrongAnswerImage.SetActive(true);
                     StartCoroutine(RightWrongAnswer());
                 }
 
-                if (QM.currentLine == 4)
+                if (QM.currentLine == 4 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionFailed();
                     RightWrongAnswerImage.SetActive(true);
                     StartCoroutine(RightWrongAnswer());
                 }
 
-                if (QM.currentLine == 5)
+                if (QM.currentLine == 5 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionAnswered();
                     RightCorrectAnswerImage.SetActive(true);
                     StartCoroutine(RightCorrectAnswer());
@@ -411,36 +435,41 @@ public class ButtonPressManager : MonoBehaviour
             //checks if user presses left button
             {
                 Debug.Log("User pressed the left button");
-                if (QM.currentLine == 0)
+                if (QM.currentLine == 0 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionAnswered();
                     LeftCorrectAnswerImage.SetActive(true);
                     StartCoroutine(LeftCorrectAnswer());
                 }
 
-                if (QM.currentLine == 1)
+                if (QM.currentLine == 1 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionFailed();
                     LeftWrongAnswerImage.SetActive(true);
                     StartCoroutine(LeftWrongAnswer());
                 }
 
-                if (QM.currentLine == 2)
+                if (QM.currentLine == 2 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionFailed();
                     LeftWrongAnswerImage.SetActive(true);
                     StartCoroutine(LeftWrongAnswer());
                 }
 
-                if (QM.currentLine == 3)
+                if (QM.currentLine == 3 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionFailed();
                     LeftWrongAnswerImage.SetActive(true);
                     StartCoroutine(LeftWrongAnswer());
                 }
 
-                if (QM.currentLine == 4)
+                if (QM.currentLine == 4 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionAnswered();
                     LeftCorrectAnswerImage.SetActive(true);
                     StartCoroutine(LeftCorrectAnswer());
@@ -463,37 +492,42 @@ public class ButtonPressManager : MonoBehaviour
             //checks if user presses middle button
             {
                 Debug.Log("User pressed the middle button");
-                if (QM.currentLine == 0)
+                if (QM.currentLine == 0 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionFailed();
                     MiddleWrongAnswerImage.SetActive(true);
                     StartCoroutine(MiddleWrongAnswer());
                 }
 
-                if (QM.currentLine == 1)
+                if (QM.currentLine == 1 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionAnswered();
                     MiddleCorrectAnswerImage.SetActive(true);
                     StartCoroutine(MiddleCorrectAnswer());
                 }
 
-                if (QM.currentLine == 2)
+                if (QM.currentLine == 2 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionAnswered();
                     MiddleCorrectAnswerImage.SetActive(true);
                     StartCoroutine(MiddleCorrectAnswer());
                 }
 
-                if (QM.currentLine == 3)
+                if (QM.currentLine == 3 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionAnswered();
                     MiddleCorrectAnswerImage.SetActive(true);
                     StartCoroutine(MiddleCorrectAnswer());
 
                 }
 
-                if (QM.currentLine == 4)
+                if (QM.currentLine == 4 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionFailed();
                     MiddleWrongAnswerImage.SetActive(true);
                     StartCoroutine(MiddleWrongAnswer());
@@ -516,36 +550,41 @@ public class ButtonPressManager : MonoBehaviour
             //checks if user presses right button
             {
                 Debug.Log("User pressed the right button");
-                if (QM.currentLine == 0)
+                if (QM.currentLine == 0 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionFailed();
                     RightWrongAnswerImage.SetActive(true);
                     StartCoroutine(RightWrongAnswer());
                 }
 
-                if (QM.currentLine == 1)
+                if (QM.currentLine == 1 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionFailed();
                     RightWrongAnswerImage.SetActive(true);
                     StartCoroutine(RightWrongAnswer());
                 }
 
-                if (QM.currentLine == 2)
+                if (QM.currentLine == 2 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionFailed();
                     RightWrongAnswerImage.SetActive(true);
                     StartCoroutine(RightWrongAnswer());
                 }
 
-                if (QM.currentLine == 3)
+                if (QM.currentLine == 3 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionFailed();
                     RightWrongAnswerImage.SetActive(true);
                     StartCoroutine(RightWrongAnswer());
                 }
 
-                if (QM.currentLine == 4)
+                if (QM.currentLine == 4 && CanAnswer == true)
                 {
+                    CanAnswer = false;
                     QM.QuestionFailed();
                     RightWrongAnswerImage.SetActive(true);
                     StartCoroutine(RightWrongAnswer());
@@ -570,36 +609,42 @@ public class ButtonPressManager : MonoBehaviour
     private IEnumerator LeftWrongAnswer()
     {
         yield return new WaitForSeconds(1f);
+        CanAnswer = true;
         LeftWrongAnswerImage.SetActive(false);
     }
 
     private IEnumerator RightWrongAnswer()
     {
         yield return new WaitForSeconds(1f);
+        CanAnswer = true;
         RightWrongAnswerImage.SetActive(false);
     }
 
     private IEnumerator MiddleWrongAnswer()
     {
         yield return new WaitForSeconds(1f);
+        CanAnswer = true;
         MiddleWrongAnswerImage.SetActive(false);
     }
 
     private IEnumerator LeftCorrectAnswer()
     {
         yield return new WaitForSeconds(1f);
+        CanAnswer = true;
         LeftCorrectAnswerImage.SetActive(false);
     }
 
     private IEnumerator RightCorrectAnswer()
     {
         yield return new WaitForSeconds(1f);
+        CanAnswer = true;
         RightCorrectAnswerImage.SetActive(false);
     }
 
     private IEnumerator MiddleCorrectAnswer()
     {
         yield return new WaitForSeconds(1f);
+        CanAnswer = true;
         MiddleCorrectAnswerImage.SetActive(false);
     }
 
@@ -627,6 +672,7 @@ public class ButtonPressManager : MonoBehaviour
     public void PointAdded()
     {
         Point++;
+        print("Added point");
     }
 
     public void PointNotAdded()

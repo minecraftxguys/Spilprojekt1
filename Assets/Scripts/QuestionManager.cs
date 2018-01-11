@@ -47,7 +47,7 @@ public class QuestionManager : MonoBehaviour {
     void Start()
     {
         PS = GameManager.GetComponent<PointSystem>();
-        Debug.Log("Victors pik er fucking lille");
+        Debug.Log("hahahahha");
         BPM = GameManager.GetComponent<ButtonPressManager>();
 
 
@@ -95,7 +95,6 @@ public class QuestionManager : MonoBehaviour {
     void Update()
     {
         #region Checking for age
-        Debug.Log("ur too late you fucking faggot");
         if (BPM.Age == 1)
         {
             endAtLine = YoungEndAtLine;

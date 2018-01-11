@@ -10,7 +10,11 @@ public class ButtonPressManager : MonoBehaviour {
     public GameObject QuestionManager;
     public GameObject GamePanel;
     public GameObject AgeSelectPanel;
+<<<<<<< HEAD
     public GameObject HighScorePanel;
+=======
+    public GameObject GameManager;
+>>>>>>> 38364019b587e89ed4e7ee7ebe510727bada015d
 
     //These objects are the. Correct and Wrong answer images that we enable and disable depending on if the answer is correct or wrong
 
@@ -26,6 +30,7 @@ public class ButtonPressManager : MonoBehaviour {
 
     //References the "QuestionManager Script"
     private QuestionManager QM;
+    private Timer TM;
     //0 = The state where age can be defined
     public int Age = 0;
 
@@ -53,21 +58,21 @@ public class ButtonPressManager : MonoBehaviour {
                 GamePanel.SetActive(true);
                 AgeSelectPanel.SetActive(false);
                 StartCoroutine(LeftButtonWait());
-                //start timer
+                TM.StartTime();
             }
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 Age = 2;
                 GamePanel.SetActive(true);
                 AgeSelectPanel.SetActive(false);
-                //start timer
+                TM.StartTime();
             }
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
                 Age = 3;
                 GamePanel.SetActive(true);
                 AgeSelectPanel.SetActive(false);
-                //start timer
+                TM.StartTime();
             }
         }
         #endregion

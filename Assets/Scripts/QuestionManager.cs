@@ -40,16 +40,18 @@ public class QuestionManager : MonoBehaviour {
 
     public GameObject GameManager;
     ButtonPressManager BPM;
-    PointSystem PS;
+    HighScoreScript HSS;
+
+
 
 
 
     void Start()
     {
         Debug.Log("Victors pik er fucking lille");
-        PS = GameManager.GetComponent<PointSystem>();
         Debug.Log("hahahahha");
         BPM = GameManager.GetComponent<ButtonPressManager>();
+        HSS = GameManager.GetComponent<HighScoreScript>();
 
 
         if (YoungFile != null)
@@ -255,10 +257,8 @@ public class QuestionManager : MonoBehaviour {
 
                 if (currentLine > endAtLine)
                 {
-                    DisableTextBox();
-                    //Application.LoadLevel("GameDay");
-
-                    //Quiz is done
+                DisableTextBox();
+                HSS.GameEnded();
                 }
                 else
                 {
@@ -287,9 +287,7 @@ public class QuestionManager : MonoBehaviour {
             if (currentLine > endAtLine)
             {
                 DisableTextBox();
-                //Application.LoadLevel("GameDay");
-
-                //Quiz is done
+                HSS.GameEnded();
             }
             else
             {

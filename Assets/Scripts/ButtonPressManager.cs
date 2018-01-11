@@ -10,7 +10,6 @@ public class ButtonPressManager : MonoBehaviour {
     public GameObject QuestionManager;
     public GameObject GamePanel;
     public GameObject AgeSelectPanel;
-    public GameObject HighScorePanel;
     public GameObject GameManager;
 
     //These objects are the. Correct and Wrong answer images that we enable and disable depending on if the answer is correct or wrong
@@ -41,6 +40,7 @@ public class ButtonPressManager : MonoBehaviour {
     void Start ()
     {
         QM = QuestionManager.GetComponent<QuestionManager>();
+        TM = GameManager.GetComponent<Timer>();
 	}
 	
 	// Update is called once per frame

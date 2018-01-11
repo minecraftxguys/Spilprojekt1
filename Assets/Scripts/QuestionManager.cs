@@ -46,7 +46,6 @@ public class QuestionManager : MonoBehaviour {
 
     void Start()
     {
-        PS = GameManager.GetComponent<PointSystem>();
         Debug.Log("Victors pik er fucking lille");
         BPM = GameManager.GetComponent<ButtonPressManager>();
 
@@ -245,7 +244,7 @@ public class QuestionManager : MonoBehaviour {
     public void QuestionAnswered()
     {
 
-        PS.PointAdded();
+        BPM.PointAdded();
 
             if (!isTyping)
             {
@@ -276,7 +275,7 @@ public class QuestionManager : MonoBehaviour {
 
     public void QuestionFailed()
     {
-        PS.PointNotAdded();
+        BPM.PointNotAdded();
 
         if (!isTyping)
         {

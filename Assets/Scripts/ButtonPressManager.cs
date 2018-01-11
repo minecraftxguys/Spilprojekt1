@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ButtonPressManager : MonoBehaviour {
 
@@ -9,6 +10,7 @@ public class ButtonPressManager : MonoBehaviour {
     public GameObject QuestionManager;
     public GameObject GamePanel;
     public GameObject AgeSelectPanel;
+    public GameObject HighScorePanel;
 
     //These objects are the. Correct and Wrong answer images that we enable and disable depending on if the answer is correct or wrong
 
@@ -26,6 +28,11 @@ public class ButtonPressManager : MonoBehaviour {
     private QuestionManager QM;
     //0 = The state where age can be defined
     public int Age = 0;
+
+    //Point System
+    public float Point = 0;
+    public float NotAPoint = 0;
+    public Text ScoreCounter;
     #endregion
 
     // Use this for initialization
@@ -37,6 +44,7 @@ public class ButtonPressManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        ScoreCounter.text = "Score: " + Point;
         #region AgeSelection
         if (Age == 0)
         {
@@ -588,6 +596,19 @@ public class ButtonPressManager : MonoBehaviour {
     {
         yield return new WaitForSeconds(1f);
         Age = 1;
+    }
+    #endregion
+
+    #region Points
+
+    public void PointAdded()
+    {
+        Point++;
+    }
+
+    public void PointNotAdded()
+    {
+        NotAPoint++;
     }
     #endregion
 }

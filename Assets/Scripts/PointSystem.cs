@@ -7,8 +7,8 @@ public class PointSystem : MonoBehaviour {
 
     public GameObject QuestionManager;
     private QuestionManager QM;
-    private float Point = 0;
-    private float NotAPoint = 0;
+    public float Point = 0;
+    public float NotAPoint = 0;
     public Text ScoreCounter;
 
 	// Use this for initialization

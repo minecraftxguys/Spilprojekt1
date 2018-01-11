@@ -46,12 +46,9 @@ public class QuestionManager : MonoBehaviour {
 
     void Start()
     {
-<<<<<<< HEAD
         Debug.Log("Victors pik er fucking lille");
-=======
         PS = GameManager.GetComponent<PointSystem>();
         Debug.Log("hahahahha");
->>>>>>> 38364019b587e89ed4e7ee7ebe510727bada015d
         BPM = GameManager.GetComponent<ButtonPressManager>();
 
 

@@ -10,11 +10,8 @@ public class ButtonPressManager : MonoBehaviour {
     public GameObject QuestionManager;
     public GameObject GamePanel;
     public GameObject AgeSelectPanel;
-<<<<<<< HEAD
     public GameObject HighScorePanel;
-=======
     public GameObject GameManager;
->>>>>>> 38364019b587e89ed4e7ee7ebe510727bada015d
 
     //These objects are the. Correct and Wrong answer images that we enable and disable depending on if the answer is correct or wrong
 

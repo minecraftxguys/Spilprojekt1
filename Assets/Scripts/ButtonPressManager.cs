@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ButtonPressManager : MonoBehaviour {
+public class ButtonPressManager : MonoBehaviour
+{
 
     #region Publics and Privates
     //The GameObject in which the script is on
@@ -37,14 +38,21 @@ public class ButtonPressManager : MonoBehaviour {
     #endregion
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         QM = QuestionManager.GetComponent<QuestionManager>();
+<<<<<<< HEAD
         TM = GameManager.GetComponent<Timer>();
 	}
 	
 	// Update is called once per frame
 	void Update ()
+=======
+    }
+
+    // Update is called once per frame
+    void Update()
+>>>>>>> 37a67c9d02d5c810f9d7230e4f1875e5104346a4
     {
         ScoreCounter.text = "Score: " + Point;
         #region AgeSelection
@@ -59,17 +67,18 @@ public class ButtonPressManager : MonoBehaviour {
             }
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                Age = 2;
                 GamePanel.SetActive(true);
                 AgeSelectPanel.SetActive(false);
+                StartCoroutine(MiddleButtonWait());
                 TM.StartTime();
             }
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-                Age = 3;
                 GamePanel.SetActive(true);
                 AgeSelectPanel.SetActive(false);
+                StartCoroutine(RightButtonWait());
                 TM.StartTime();
+
             }
         }
         #endregion
@@ -557,7 +566,7 @@ public class ButtonPressManager : MonoBehaviour {
 
         #endregion
     }
-#region IEnumerators
+    #region IEnumerators
     private IEnumerator LeftWrongAnswer()
     {
         yield return new WaitForSeconds(1f);
@@ -598,6 +607,18 @@ public class ButtonPressManager : MonoBehaviour {
     {
         yield return new WaitForSeconds(1f);
         Age = 1;
+    }
+
+    private IEnumerator RightButtonWait()
+    {
+        yield return new WaitForSeconds(1f);
+        Age = 3;
+    }
+
+    private IEnumerator MiddleButtonWait()
+    {
+        yield return new WaitForSeconds(1f);
+        Age = 2;
     }
     #endregion
 

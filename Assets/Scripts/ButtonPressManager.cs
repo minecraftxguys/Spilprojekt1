@@ -41,19 +41,18 @@ public class ButtonPressManager : MonoBehaviour
     void Start()
     {
         QM = QuestionManager.GetComponent<QuestionManager>();
-<<<<<<< HEAD
+
         TM = GameManager.GetComponent<Timer>();
 	}
 	
 	// Update is called once per frame
 	void Update ()
-=======
-    }
+    { 
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            PointAdded();
+        }
 
-    // Update is called once per frame
-    void Update()
->>>>>>> 37a67c9d02d5c810f9d7230e4f1875e5104346a4
-    {
         ScoreCounter.text = "Score: " + Point;
         #region AgeSelection
         if (Age == 0)

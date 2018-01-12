@@ -252,7 +252,7 @@ public class QuestionManager : MonoBehaviour {
             if (!isTyping)
             {
 
-                currentLine += 1;
+                currentLine ++;
 
 
                 if (currentLine > endAtLine)
@@ -299,6 +299,7 @@ public class QuestionManager : MonoBehaviour {
         else if (isTyping && !cancelTyping)
         {
             cancelTyping = true;
+
         }
 
 }

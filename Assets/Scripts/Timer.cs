@@ -7,8 +7,8 @@ public class Timer : MonoBehaviour
 {
 
     public Text TimerText;
-    private int Seconds;
-    private float Minutes;
+    public int Seconds;
+    public float Minutes;
     private bool TimeEnabled = false;
     private bool TwoDigitsSec;
     private bool TwoDigitsMin;

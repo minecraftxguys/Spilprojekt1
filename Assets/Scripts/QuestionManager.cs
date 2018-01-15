@@ -88,16 +88,12 @@ public class QuestionManager : MonoBehaviour {
         {
             EnableTextBox();
         }
-        else
-        {
-            DisableTextBox();
-        }
 
     }
 
     void Update()
     {
-        #region Checking for age
+    #region Checking for age
         if (BPM.Age == 1)
         {
             endAtLine = YoungEndAtLine;
@@ -254,10 +250,8 @@ public class QuestionManager : MonoBehaviour {
 
                 currentLine ++;
 
-
                 if (currentLine > endAtLine)
                 {
-                DisableTextBox();
                 HSS.GameEnded();
                 }
                 else
@@ -286,7 +280,6 @@ public class QuestionManager : MonoBehaviour {
 
             if (currentLine > endAtLine)
             {
-                DisableTextBox();
                 HSS.GameEnded();
             }
             else
@@ -330,19 +323,12 @@ public class QuestionManager : MonoBehaviour {
 
     public void EnableTextBox()
     {
-        textBox.SetActive(true);
         isActive = true;
         Debug.Log("Im enabled");
 
 
 
         StartCoroutine(TextDelays());
-    }
-
-    public void DisableTextBox()
-    {
-        textBox.SetActive(false);
-        isActive = false;
     }
 
 

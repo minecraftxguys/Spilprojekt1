@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class QuestionManager : MonoBehaviour {
 
 
-    public GameObject textBox;
-
     public Text theText;
 
     public AudioSource randomSound;
@@ -101,7 +99,12 @@ public class QuestionManager : MonoBehaviour {
 
     void Update()
     {
-    #region Checking for age
+
+        if (!isActive)
+        {
+            return;
+        }
+        #region Checking for age
         if (BPM.Age == 1)
         {
             endAtLine = YoungEndAtLine;
@@ -162,7 +165,7 @@ public class QuestionManager : MonoBehaviour {
         #endregion
 
     #region Checklines if Middle
-        if (BPM.Age == 1)
+        if (BPM.Age == 2)
         {
             if (currentLine == 0)
             {
@@ -202,7 +205,7 @@ public class QuestionManager : MonoBehaviour {
         #endregion
 
     #region Checklines if Old
-        if (BPM.Age == 1)
+        if (BPM.Age == 3)
         {
             if (currentLine == 0)
             {
@@ -240,11 +243,6 @@ public class QuestionManager : MonoBehaviour {
             }
         }
         #endregion
-
-        if (!isActive)
-        {
-            return;
-        }
 
     }
 
@@ -338,7 +336,7 @@ public class QuestionManager : MonoBehaviour {
 
     private IEnumerator TextDelays()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         StartCoroutine(TextScroll(textLines[currentLine]));
     }
 

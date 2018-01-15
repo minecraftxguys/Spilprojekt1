@@ -4,11 +4,24 @@ using UnityEngine;
 
 public class ButtonManager : MonoBehaviour {
 
-    public GameObject Answer1;
-    public GameObject Answer2;
-    public GameObject Answer3;
+    //0-15
+    public GameObject Answer1Young;
+    public GameObject Answer2Young;
+    public GameObject Answer3Young;
 
-    public int currentLine;
+    //16-24
+    public GameObject Answer1Middle;
+    public GameObject Answer2Middle;
+    public GameObject Answer3Middle;
+    public GameObject Answer4Middle;
+    public GameObject Answer5Middle;
+    public GameObject Answer6Middle;
+    //25+
+    public GameObject Answer1Old;
+    public GameObject Answer2Old;
+    public GameObject Answer3Old;
+    public GameObject Answer4Old;
+    public GameObject Answer5Old;
 
 
     void Update()
@@ -21,17 +34,20 @@ public class ButtonManager : MonoBehaviour {
     {
         if (id == 0)
         {
-            // change answer1, answer2 and answer3 into the pictures/answers for question 1(line 1)
+            Answer1Young.SetActive(true);
         }
             
         if (id == 1)
         {
-
+            Answer1Young.SetActive(false);
+            Answer2Young.SetActive(true);
         }
 
         if (id == 2)
         {
-
+            Answer1Young.SetActive(false);
+            Answer2Young.SetActive(false);
+            Answer3Young.SetActive(true);
         }
 
         if (id == 3)
@@ -61,32 +77,47 @@ public class ButtonManager : MonoBehaviour {
     {
         if (id == 0)
         {
-            // change answer1, answer2 and answer3 into the pictures/answers for question 1(line 1)
+            Answer1Middle.SetActive(true);
         }
 
         if (id == 1)
         {
-
+            Answer1Middle.SetActive(false);
+            Answer2Middle.SetActive(true);
         }
 
         if (id == 2)
         {
-
+            Answer1Middle.SetActive(false);
+            Answer2Middle.SetActive(false);
+            Answer3Middle.SetActive(true);
         }
 
         if (id == 3)
         {
-
+            Answer1Middle.SetActive(false);
+            Answer2Middle.SetActive(false);
+            Answer3Middle.SetActive(false);
+            Answer4Middle.SetActive(true);
         }
 
         if (id == 4)
         {
-
+            Answer1Middle.SetActive(false);
+            Answer2Middle.SetActive(false);
+            Answer3Middle.SetActive(false);
+            Answer4Middle.SetActive(false);
+            Answer5Middle.SetActive(true);
         }
 
         if (id == 5)
         {
-
+            Answer1Middle.SetActive(false);
+            Answer2Middle.SetActive(false);
+            Answer3Middle.SetActive(false);
+            Answer4Middle.SetActive(false);
+            Answer5Middle.SetActive(false);
+            Answer6Middle.SetActive(true);
         }
 
         if (id == 6)
@@ -101,26 +132,37 @@ public class ButtonManager : MonoBehaviour {
     {
         if (id == 0)
         {
-            // change answer1, answer2 and answer3 into the pictures/answers for question 1(line 1)
+            Answer1Old.SetActive(true);
         }
 
         if (id == 1)
         {
-
+            Answer1Old.SetActive(false);
+            Answer2Old.SetActive(true);
         }
 
         if (id == 2)
         {
-
+            Answer1Old.SetActive(false);
+            Answer2Old.SetActive(false);
+            Answer3Old.SetActive(true);
         }
 
         if (id == 3)
         {
-
+            Answer1Old.SetActive(false);
+            Answer2Old.SetActive(false);
+            Answer3Old.SetActive(false);
+            Answer4Old.SetActive(true);
         }
 
         if (id == 4)
         {
+            Answer1Old.SetActive(false);
+            Answer2Old.SetActive(false);
+            Answer3Old.SetActive(false);
+            Answer4Old.SetActive(false);
+            Answer5Old.SetActive(true);
 
         }
 

@@ -564,7 +564,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &417523182
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1602,7 +1602,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1079269544
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2466,7 +2466,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd2e2e30d7e4f214c9b158de7a702eba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameManager: {fileID: 1980425782}
   AgePanel: {fileID: 1079269543}
   GamePanel: {fileID: 1289445352}
   HighScorePanel: {fileID: 417523181}

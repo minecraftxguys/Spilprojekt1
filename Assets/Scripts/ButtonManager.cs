@@ -19,11 +19,16 @@ public class ButtonManager : MonoBehaviour {
     #region YoungChangeAnswer
     public void YoungChangeAnswer(int id)
     {
-        if (id == 1)
+        if (id == 0)
         {
             // change answer1, answer2 and answer3 into the pictures/answers for question 1(line 1)
         }
             
+        if (id == 1)
+        {
+
+        }
+
         if (id == 2)
         {
 
@@ -45,11 +50,6 @@ public class ButtonManager : MonoBehaviour {
         }
 
         if (id == 6)
-        {
-
-        }
-
-        if (id == 7)
         {
 
         }
@@ -59,9 +59,14 @@ public class ButtonManager : MonoBehaviour {
     #region MiddleChangeAnswer
     public void MiddleChangeAnswer(int id)
     {
-        if (id == 1)
+        if (id == 0)
         {
             // change answer1, answer2 and answer3 into the pictures/answers for question 1(line 1)
+        }
+
+        if (id == 1)
+        {
+
         }
 
         if (id == 2)
@@ -85,11 +90,6 @@ public class ButtonManager : MonoBehaviour {
         }
 
         if (id == 6)
-        {
-
-        }
-
-        if (id == 7)
         {
 
         }
@@ -99,9 +99,14 @@ public class ButtonManager : MonoBehaviour {
     #region OldChangeAnswer
     public void OldChangeAnswer(int id)
     {
-        if (id == 1)
+        if (id == 0)
         {
             // change answer1, answer2 and answer3 into the pictures/answers for question 1(line 1)
+        }
+
+        if (id == 1)
+        {
+
         }
 
         if (id == 2)
@@ -125,11 +130,6 @@ public class ButtonManager : MonoBehaviour {
         }
 
         if (id == 6)
-        {
-
-        }
-
-        if (id == 7)
         {
 
         }

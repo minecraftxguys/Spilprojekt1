@@ -8,6 +8,14 @@ public class QuestionManager : MonoBehaviour {
 
     public Text theText;
 
+    public AudioSource randomSound;
+    public AudioClip[] audioSourcesYoungCorrect;
+    public AudioClip[] audioSourcesTeenCorrect;
+    public AudioClip[] audioSourcesOldCorrect;
+    public AudioClip[] audioSourcesYoungWrong;
+    public AudioClip[] audioSourcesTeenWrong;
+    public AudioClip[] audioSourcesOldWrong;
+
     //public Text YoungText;
     //public Text MiddleText;
     //public Text OldText;
@@ -243,28 +251,43 @@ public class QuestionManager : MonoBehaviour {
 
         BPM.PointAdded();
 
-            if (!isTyping)
+        if (!isTyping)
+        {
+
+            currentLine++;
+
+            if (currentLine > endAtLine)
             {
-
-                currentLine ++;
-
-                if (currentLine > endAtLine)
-                {
                 HSS.GameEnded();
-                }
-                else
-                {
-                    StartCoroutine(TextScroll(textLines[currentLine]));
-                }
-
-
             }
-            else if (isTyping && !cancelTyping)
+            else
             {
-                cancelTyping = true;
+                StartCoroutine(TextScroll(textLines[currentLine]));
             }
+
 
         }
+        else if (isTyping && !cancelTyping)
+        {
+            cancelTyping = true;
+        }
+
+        if(BPM.Age == 1)
+        {
+            randomSound.clip = audioSourcesYoungCorrect[Random.Range(0, audioSourcesYoungCorrect.Length)];
+            randomSound.Play();
+        }
+        if(BPM.Age == 2)
+        {
+            randomSound.clip = audioSourcesTeenCorrect[Random.Range(0, audioSourcesTeenCorrect.Length)];
+            randomSound.Play();
+        }
+        if(BPM.Age == 3)
+        {
+            randomSound.clip = audioSourcesOldCorrect[Random.Range(0, audioSourcesOldCorrect.Length)];
+            randomSound.Play();
+        }
+    }
 
     public void QuestionFailed()
     {
@@ -291,6 +314,22 @@ public class QuestionManager : MonoBehaviour {
         {
             cancelTyping = true;
 
+        }
+
+        if(BPM.Age == 1)
+        {
+            randomSound.clip = audioSourcesYoungWrong[Random.Range(0, audioSourcesYoungWrong.Length)];
+            randomSound.Play();
+        }
+        if(BPM.Age == 2)
+        {
+            randomSound.clip = audioSourcesTeenWrong[Random.Range(0, audioSourcesTeenWrong.Length)];
+            randomSound.Play();
+        }
+        if(BPM.Age == 3)
+        {
+            randomSound.clip = audioSourcesOldWrong[Random.Range(0, audioSourcesOldWrong.Length)];
+            randomSound.Play();
         }
 
 }

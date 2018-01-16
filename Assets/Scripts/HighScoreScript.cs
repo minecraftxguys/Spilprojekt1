@@ -41,15 +41,15 @@ public class HighScoreScript : MonoBehaviour
 
         HighScorePanel.SetActive(true);
         GamePanel.SetActive(false);
-        PlayerText.text = "Du har fået: " + BPM.Point + " point";
+        PlayerText.text = "Du fik " + BPM.Point + " point!";
         #region Checkifbigger
         if (BPM.Point >= Top1 )
         {
-            Top1Text.text = "1. " + BPM.Point + " point";
-            Top2Text.text = "2. " + Top1 + " point";
-            Top3Text.text = "3. " + Top2 + " point";
-            Top4Text.text = "4. " + Top3 + " point";
-            Top5Text.text = "5. " + Top4 + " point";
+            Top1Text.text = "1.     " + BPM.Point + " point";
+            Top2Text.text = "2.     " + Top1 + " point";
+            Top3Text.text = "3.     " + Top2 + " point";
+            Top4Text.text = "4.     " + Top3 + " point";
+            Top5Text.text = "5.     " + Top4 + " point";
             Top1Cache = Top1;
             Top2Cache = Top2;
             Top3Cache = Top3;
@@ -63,12 +63,12 @@ public class HighScoreScript : MonoBehaviour
         }
         if (BPM.Point < Top1 && BPM.Point >= Top2)
         {
-            Top2Text.text = "2. " + BPM.Point + " point";
-            Top3Text.text = "3. " + Top2 + " point";
+            Top2Text.text = "2.     " + BPM.Point + " point";
+            Top3Text.text = "3.     " + Top2 + " point";
             Top2 = Top3;
-            Top4Text.text = "4. " + Top3 + " point";
+            Top4Text.text = "4.     " + Top3 + " point";
             Top3 = Top4;
-            Top5Text.text = "5. " + Top4 + " point";
+            Top5Text.text = "5.     " + Top4 + " point";
 
             Top2Cache = Top2;
             Top3Cache = Top3;
@@ -82,9 +82,9 @@ public class HighScoreScript : MonoBehaviour
         }
         if (BPM.Point < Top1 && BPM.Point < Top2 && BPM.Point >= Top3)
         {
-            Top3Text.text = "3. " + BPM.Point + " point";
-            Top4Text.text = "4. " + Top3 + " point";
-            Top5Text.text = "5. " + Top4 + " point";
+            Top3Text.text = "3.     " + BPM.Point + " point";
+            Top4Text.text = "4.     " + Top3 + " point";
+            Top5Text.text = "5.     " + Top4 + " point";
 
             Top3Cache = Top3;
             Top4Cache = Top4;
@@ -95,8 +95,8 @@ public class HighScoreScript : MonoBehaviour
         }
         if (BPM.Point < Top1 && BPM.Point < Top2 && BPM.Point < Top3 && BPM.Point >= Top4)
         {
-            Top4Text.text = "4. " + BPM.Point + " point";
-            Top5Text.text = "5. " + Top4 + " point";
+            Top4Text.text = "4.     " + BPM.Point + " point";
+            Top5Text.text = "5.     " + Top4 + " point";
 
             Top4Cache = Top4;
 
@@ -105,18 +105,18 @@ public class HighScoreScript : MonoBehaviour
         }
         if (BPM.Point < Top1 && BPM.Point < Top2 && BPM.Point < Top3 && BPM.Point < Top4 && BPM.Point >= Top5)
         {
-            Top5Text.text = "5. " + BPM.Point + " point";
+            Top5Text.text = "5.     " + BPM.Point + " point";
 
             Top5 = BPM.Point;
         }
 
         if (BPM.Point < Top5)
         {
-            Top1Text.text = "1. " + Top1 + " point";
-            Top2Text.text = "2. " + Top2 + " point";
-            Top3Text.text = "3. " + Top3 + " point";
-            Top4Text.text = "4. " + Top4 + " point";
-            Top5Text.text = "5. " + Top5 + " point";
+            Top1Text.text = "1.     " + Top1 + " point";
+            Top2Text.text = "2.     " + Top2 + " point";
+            Top3Text.text = "3.     " + Top3 + " point";
+            Top4Text.text = "4.     " + Top4 + " point";
+            Top5Text.text = "5.     " + Top5 + " point";
         }
         #endregion
     }

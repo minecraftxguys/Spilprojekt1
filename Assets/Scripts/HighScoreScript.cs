@@ -138,9 +138,9 @@ public class HighScoreScript : MonoBehaviour
         yield return new WaitForSeconds(10f);
         AgePanel.SetActive(true);
         HighScorePanel.SetActive(false);
-        BM.YoungChangeAnswer(0);
-        BM.MiddleChangeAnswer(0);
-        BM.OldChangeAnswer(0);
+        BM.YoungChangeAnswer(50);
+        BM.MiddleChangeAnswer(50);
+        BM.OldChangeAnswer(50);
         BPM.Age = 0;
         BPM.Point = 0;
     }

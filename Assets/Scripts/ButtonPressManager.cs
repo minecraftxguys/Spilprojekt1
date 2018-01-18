@@ -199,7 +199,7 @@ public class ButtonPressManager : MonoBehaviour
                 {
                     CanAnswer = false;
                     QM.QuestionFailed();
-                    MiddleWrongAnswerImage.SetActive(true);
+                    RightWrongAnswerImage.SetActive(true);
                     StartCoroutine(MiddleWrongAnswer());
                 }
 

@@ -52,7 +52,9 @@ public class ButtonManager : MonoBehaviour {
 
         if (id == 3)
         {
-
+            Answer1Young.SetActive(false);
+            Answer2Young.SetActive(false);
+            Answer3Young.SetActive(false);
         }
 
         if (id == 4)
@@ -122,7 +124,12 @@ public class ButtonManager : MonoBehaviour {
 
         if (id == 6)
         {
-
+            Answer1Middle.SetActive(false);
+            Answer2Middle.SetActive(false);
+            Answer3Middle.SetActive(false);
+            Answer4Middle.SetActive(false);
+            Answer5Middle.SetActive(false);
+            Answer6Middle.SetActive(false);
         }
     }
     #endregion
@@ -168,7 +175,11 @@ public class ButtonManager : MonoBehaviour {
 
         if (id == 5)
         {
-
+            Answer1Old.SetActive(false);
+            Answer2Old.SetActive(false);
+            Answer3Old.SetActive(false);
+            Answer4Old.SetActive(false);
+            Answer5Old.SetActive(false);
         }
 
         if (id == 6)

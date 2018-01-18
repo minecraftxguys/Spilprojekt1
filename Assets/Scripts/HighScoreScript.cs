@@ -9,6 +9,7 @@ public class HighScoreScript : MonoBehaviour
     public GameObject GamePanel;
     public GameObject HighScorePanel;
     public GameObject GameManager;
+    public GameObject QuestionManager;
     public Text PlayerText;
     float Top1 = 0;
     float Top2 = 0;
@@ -30,19 +31,24 @@ public class HighScoreScript : MonoBehaviour
     //Scripts
     private ButtonPressManager BPM;
     private ButtonManager BM;
+    private QuestionManager QM;
 
     void Start()
     {
         BPM = GameManager.GetComponent<ButtonPressManager>();
         BM = GameManager.GetComponent<ButtonManager>();
+        QM = QuestionManager.GetComponent<QuestionManager>();
 }
 
     public void GameEnded()
     {
-
-
+        BPM.canGetPoint = false;
+        BM.Answer5Old.SetActive(false);
+        BM.Answer6Middle.SetActive(false);
+        BM.Answer3Young.SetActive(false);
         HighScorePanel.SetActive(true);
         GamePanel.SetActive(false);
+        
         StartCoroutine(RestartGame());
         PlayerText.text = "Du fik " + BPM.Point + " point!";
         #region Checkifbigger
@@ -143,5 +149,6 @@ public class HighScoreScript : MonoBehaviour
         BM.OldChangeAnswer(50);
         BPM.Age = 0;
         BPM.Point = 0;
+        BPM.canGetPoint = true;
     }
 }

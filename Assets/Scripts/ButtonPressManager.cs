@@ -32,6 +32,7 @@ public class ButtonPressManager : MonoBehaviour
 
     //Boolean testing
     public bool CanAnswer = true;
+    public bool canGetPoint = true;
 
     //Point System
     public float Point = 0;
@@ -200,7 +201,7 @@ public class ButtonPressManager : MonoBehaviour
                     CanAnswer = false;
                     QM.QuestionFailed();
                     RightWrongAnswerImage.SetActive(true);
-                    StartCoroutine(MiddleWrongAnswer());
+                    StartCoroutine(RightWrongAnswer());
                 }
 
                 if (QM.currentLine == 1 && CanAnswer == true)
@@ -656,18 +657,21 @@ public class ButtonPressManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         Age = 1;
+        QM.EnableTextBox();
     }
 
     private IEnumerator RightButtonWait()
     {
         yield return new WaitForSeconds(1f);
         Age = 3;
+        QM.EnableTextBox();
     }
 
     private IEnumerator MiddleButtonWait()
     {
         yield return new WaitForSeconds(1f);
         Age = 2;
+        QM.EnableTextBox();
     }
     #endregion
 
@@ -675,8 +679,11 @@ public class ButtonPressManager : MonoBehaviour
 
     public void PointAdded()
     {
-        Point++;
-        print("Added point");
+        if (canGetPoint == true)
+        {
+            Point++;
+            print("Added point");
+        }
     }
 
     public void PointNotAdded()

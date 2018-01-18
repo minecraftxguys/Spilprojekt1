@@ -35,6 +35,8 @@ public class ButtonManager : MonoBehaviour {
         if (id == 0)
         {
             Answer1Young.SetActive(true);
+            Answer2Young.SetActive(false);
+            Answer3Young.SetActive(false);
         }
             
         if (id == 1)
@@ -80,6 +82,11 @@ public class ButtonManager : MonoBehaviour {
         if (id == 0)
         {
             Answer1Middle.SetActive(true);
+            Answer2Middle.SetActive(false);
+            Answer3Middle.SetActive(false);
+            Answer4Middle.SetActive(false);
+            Answer5Middle.SetActive(false);
+            Answer6Middle.SetActive(false);
         }
 
         if (id == 1)
@@ -140,6 +147,10 @@ public class ButtonManager : MonoBehaviour {
         if (id == 0)
         {
             Answer1Old.SetActive(true);
+            Answer2Old.SetActive(false);
+            Answer3Old.SetActive(false);
+            Answer4Old.SetActive(false);
+            Answer5Old.SetActive(false);
         }
 
         if (id == 1)

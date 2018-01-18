@@ -90,10 +90,10 @@ public class QuestionManager : MonoBehaviour {
             OldEndAtLine = OldLines.Length - 1;
         }
 
-        if (isActive)
-        {
-            EnableTextBox();
-        }
+        //if (isActive)
+        //{
+        //    EnableTextBox();
+        //}
 
     }
 
@@ -258,8 +258,39 @@ public class QuestionManager : MonoBehaviour {
 
             if (currentLine > endAtLine)
             {
-                HSS.GameEnded();
                 currentLine = 0;
+                endAtLine = 0;
+
+                if (YoungFile != null)
+                {
+                    YoungLines = (YoungFile.text.Split('\n'));
+                }
+
+                if (MiddleFile != null)
+                {
+                    MiddleLines = (MiddleFile.text.Split('\n'));
+                }
+
+                if (OldFile != null)
+                {
+                    OldLines = (OldFile.text.Split('\n'));
+                }
+
+                if (YoungEndAtLine == 0)
+                {
+                    YoungEndAtLine = YoungLines.Length - 1;
+                }
+
+                if (MiddleEndAtLine == 0)
+                {
+                    MiddleEndAtLine = MiddleLines.Length - 1;
+                }
+
+                if (OldEndAtLine == 0)
+                {
+                    OldEndAtLine = OldLines.Length - 1;
+                }
+                HSS.GameEnded();
             }
             else
             {
@@ -302,8 +333,39 @@ public class QuestionManager : MonoBehaviour {
 
             if (currentLine > endAtLine)
             {
-                HSS.GameEnded();
                 currentLine = 0;
+                endAtLine = 0;
+
+                if (YoungFile != null)
+                {
+                    YoungLines = (YoungFile.text.Split('\n'));
+                }
+
+                if (MiddleFile != null)
+                {
+                    MiddleLines = (MiddleFile.text.Split('\n'));
+                }
+
+                if (OldFile != null)
+                {
+                    OldLines = (OldFile.text.Split('\n'));
+                }
+
+                if (YoungEndAtLine == 0)
+                {
+                    YoungEndAtLine = YoungLines.Length - 1;
+                }
+
+                if (MiddleEndAtLine == 0)
+                {
+                    MiddleEndAtLine = MiddleLines.Length - 1;
+                }
+
+                if (OldEndAtLine == 0)
+                {
+                    OldEndAtLine = OldLines.Length - 1;
+                }
+                HSS.GameEnded();
             }
             else
             {

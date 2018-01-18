@@ -27,7 +27,6 @@ public class ButtonPressManager : MonoBehaviour
 
     //References the "QuestionManager Script"
     private QuestionManager QM;
-    private Timer TM;
     //0 = The state where age can be defined
     public int Age = 0;
 
@@ -45,7 +44,6 @@ public class ButtonPressManager : MonoBehaviour
     {
         QM = QuestionManager.GetComponent<QuestionManager>();
 
-        TM = GameManager.GetComponent<Timer>();
     }
 
     // Update is called once per frame
@@ -69,21 +67,18 @@ public class ButtonPressManager : MonoBehaviour
                 GamePanel.SetActive(true);
                 AgeSelectPanel.SetActive(false);
                 StartCoroutine(LeftButtonWait());
-                TM.StartTime();
             }
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 GamePanel.SetActive(true);
                 AgeSelectPanel.SetActive(false);
                 StartCoroutine(MiddleButtonWait());
-                TM.StartTime();
             }
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
                 GamePanel.SetActive(true);
                 AgeSelectPanel.SetActive(false);
                 StartCoroutine(RightButtonWait());
-                TM.StartTime();
 
             }
         }

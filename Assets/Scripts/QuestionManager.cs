@@ -259,6 +259,7 @@ public class QuestionManager : MonoBehaviour {
             if (currentLine > endAtLine)
             {
                 HSS.GameEnded();
+                currentLine = 0;
             }
             else
             {
@@ -302,6 +303,7 @@ public class QuestionManager : MonoBehaviour {
             if (currentLine > endAtLine)
             {
                 HSS.GameEnded();
+                currentLine = 0;
             }
             else
             {
@@ -336,7 +338,7 @@ public class QuestionManager : MonoBehaviour {
 
     private IEnumerator TextDelays()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         StartCoroutine(TextScroll(textLines[currentLine]));
     }
 
